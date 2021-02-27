@@ -12,7 +12,7 @@
       <div class="left">
         <div class="box">
           <div class="box__title">Buffers</div>
-          <pre class="box__content">
+          <pre class="box__content" data-buffers>
             var a = "test";
           </pre>
         </div>
@@ -20,7 +20,7 @@
 
         <div class="box">
           <div class="box__title">Attributes</div>
-          <pre class="box__content">
+          <pre class="box__content" data-attributes>
             var a = "test";
           </pre>
         </div>
@@ -28,7 +28,7 @@
 
         <div class="box">
           <div class="box__title">Uniforms</div>
-          <pre class="box__content">
+          <pre class="box__content" data-uniforms>
             var a = "test";
           </pre>
         </div>
@@ -91,14 +91,14 @@
         <div class="bottom-right">
           <div class="box">
             <div class="box__title">Vertex shader</div>
-            <pre class="box__content">
+            <pre class="box__content" data-vertex>
               var a = "test";
             </pre>
           </div>
 
           <div class="box">
             <div class="box__title">Fragment shader</div>
-            <pre class="box__content">
+            <pre class="box__content" data-fragment>
               var a = "test";
             </pre>
           </div>
@@ -106,40 +106,24 @@
       </div>
     </main>
 
+    <script src="./n/2.js"></script>
     <script>
-      const BUFFERS = {
-        data1: [0.0, 1.0, 2.0],
-      };
+      // update view
+      document.querySelector("[data-buffers]").innerHTML = JSON.stringify(
+        BUFFERS
+      );
 
-      const ATTRIBUTES = {
-        index: { buffer: "data1", size: 1 }, // stride, offset
-      };
+      document.querySelector("[data-attributes]").innerHTML = JSON.stringify(
+        ATTRIBUTES
+      );
 
-      const VERTEX = `
-attribute float index;
+      document.querySelector("[data-uniforms]").innerHTML = JSON.stringify(
+        UNIFORMS
+      );
 
-void main() {
-  if (index == 0.0) {
-    gl_Position = vec4(0.0, 0.0, 0.0, 1.0);
-  }
-
-  if (index == 1.0) {
-    gl_Position = vec4(0.0, 0.5, 0.0, 1.0);
-  }
-
-  if (index == 2.0) {
-    gl_Position = vec4(0.7, 0.0, 0.0, 1.0);
-  }
-}
-`;
-
-      const FRAGMENT = `
-precision highp float;
-
-void main() {
-  gl_FragColor = vec4(1.0, 0.0, 0.0, 1.0);
-}
-`;
+      // document.querySelector("[data-fragment]").innerHTML = FRAGMENT;
+      document.querySelector("[data-vertex]").innerHTML = VERTEX;
+      document.querySelector("[data-fragment]").innerHTML = FRAGMENT;
 
       // start real deal
       const $canvas = document.querySelector(".canvas__frame");
@@ -153,14 +137,22 @@ void main() {
 
       gl.viewport(0, 0, WIDTH, HEIGHT);
 
-      const vs = gl.createShader(gl.VERTEX_SHADER);
-      gl.shaderSource(vs, VERTEX);
-      gl.compileShader(vs);
+      function compileShader(gl, shaderSource, shaderType) {
+        var shader = gl.createShader(shaderType);
+        gl.shaderSource(shader, shaderSource);
+        gl.compileShader(shader);
 
-      const fs = gl.createShader(gl.FRAGMENT_SHADER);
-      gl.shaderSource(fs, FRAGMENT);
-      gl.compileShader(fs);
+        var success = gl.getShaderParameter(shader, gl.COMPILE_STATUS);
 
+        if (!success) {
+          throw "could not compile shader:" + gl.getShaderInfoLog(shader);
+        }
+
+        return shader;
+      }
+
+      const vs = compileShader(gl, VERTEX, gl.VERTEX_SHADER);
+      const fs = compileShader(gl, FRAGMENT, gl.FRAGMENT_SHADER);
       const program = gl.createProgram();
       gl.attachShader(program, vs);
       gl.attachShader(program, fs);
