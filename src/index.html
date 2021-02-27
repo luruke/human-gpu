@@ -38,6 +38,7 @@
 
       <div class="right">
         <div class="canvas">
+          <canvas class="canvas__frame"></canvas>
           <div class="canvas__layer-x">
             <span></span>
             <span></span>
@@ -104,5 +105,88 @@
         </div>
       </div>
     </main>
+
+    <script>
+      const BUFFERS = {
+        data1: [0.0, 1.0, 2.0],
+      };
+
+      const ATTRIBUTES = {
+        index: { buffer: "data1", size: 1 }, // stride, offset
+      };
+
+      const VERTEX = `
+attribute float index;
+
+void main() {
+  if (index == 0.0) {
+    gl_Position = vec4(0.0, 0.0, 0.0, 1.0);
+  }
+
+  if (index == 1.0) {
+    gl_Position = vec4(0.0, 0.5, 0.0, 1.0);
+  }
+
+  if (index == 2.0) {
+    gl_Position = vec4(0.7, 0.0, 0.0, 1.0);
+  }
+}
+`;
+
+      const FRAGMENT = `
+precision highp float;
+
+void main() {
+  gl_FragColor = vec4(1.0, 0.0, 0.0, 1.0);
+}
+`;
+
+      // start real deal
+      const $canvas = document.querySelector(".canvas__frame");
+      const gl = $canvas.getContext("webgl");
+
+      const WIDTH = $canvas.getBoundingClientRect().width;
+      const HEIGHT = $canvas.getBoundingClientRect().height;
+
+      $canvas.width = WIDTH;
+      $canvas.height = HEIGHT;
+
+      gl.viewport(0, 0, WIDTH, HEIGHT);
+
+      const vs = gl.createShader(gl.VERTEX_SHADER);
+      gl.shaderSource(vs, VERTEX);
+      gl.compileShader(vs);
+
+      const fs = gl.createShader(gl.FRAGMENT_SHADER);
+      gl.shaderSource(fs, FRAGMENT);
+      gl.compileShader(fs);
+
+      const program = gl.createProgram();
+      gl.attachShader(program, vs);
+      gl.attachShader(program, fs);
+      gl.linkProgram(program);
+      gl.useProgram(program);
+
+      for (const attribName in ATTRIBUTES) {
+        const fattrib = ATTRIBUTES[attribName];
+        const fbuffer = BUFFERS[fattrib.buffer];
+
+        const buffer = gl.createBuffer();
+        gl.bindBuffer(gl.ARRAY_BUFFER, buffer);
+        gl.bufferData(
+          gl.ARRAY_BUFFER,
+          new Float32Array(fbuffer),
+          gl.STATIC_DRAW
+        );
+
+        const location = gl.getAttribLocation(program, attribName);
+        gl.enableVertexAttribArray(location);
+        gl.vertexAttribPointer(location, fattrib.size, gl.FLOAT, false, 0, 0);
+      }
+
+      gl.clearColor(1, 1, 1, 0);
+      gl.clear(gl.COLOR_BUFFER_BIT);
+      gl.drawArrays(gl.TRIANGLES, 0, 3);
+    </script>
   </body>
 </html>
