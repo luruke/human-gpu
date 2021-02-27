@@ -39,6 +39,11 @@ main {
 .box {
   border: 1px solid black;
   border-radius: 2.5mm;
+  overflow: hidden;
+}
+
+.box pre {
+  margin: 0 !important;
 }
 
 .box__title {

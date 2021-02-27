@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="prism.css" />
     <title>Document</title>
   </head>
   <body>
@@ -12,24 +13,24 @@
       <div class="left">
         <div class="box">
           <div class="box__title">Buffers</div>
-          <pre class="box__content" data-buffers>
-            var a = "test";
+          <pre class="box__content">
+<code class="language-javascript" data-buffers></code>
           </pre>
         </div>
         <!-- box -->
 
         <div class="box">
           <div class="box__title">Attributes</div>
-          <pre class="box__content" data-attributes>
-            var a = "test";
+          <pre class="box__content">
+<code class="language-javascript" data-attributes></code>
           </pre>
         </div>
         <!-- box -->
 
         <div class="box">
           <div class="box__title">Uniforms</div>
-          <pre class="box__content" data-uniforms>
-            var a = "test";
+          <pre class="box__content">
+<code class="language-javascript" data-uniforms></code>
           </pre>
         </div>
         <!-- box -->
@@ -91,21 +92,22 @@
         <div class="bottom-right">
           <div class="box">
             <div class="box__title">Vertex shader</div>
-            <pre class="box__content" data-vertex>
-              var a = "test";
+            <pre class="box__content">
+<code class="language-glsl" data-vertex></code>
             </pre>
           </div>
 
           <div class="box">
             <div class="box__title">Fragment shader</div>
-            <pre class="box__content" data-fragment>
-              var a = "test";
+            <pre class="box__content">
+<code class="language-glsl" data-fragment></code>
             </pre>
           </div>
         </div>
       </div>
     </main>
 
+    <script src="./prism.js"></script>
     <script src="./n/1.js"></script>
     <script>
       // update view
