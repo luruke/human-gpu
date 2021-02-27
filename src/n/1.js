@@ -1,12 +1,12 @@
-const BUFFERS = {
-  data1: [0.0, 1.0, 2.0],
-};
+const BUFFERS = `{
+  "data1": [0.0, 1.0, 2.0]
+}`;
 
-const ATTRIBUTES = {
-  index: { buffer: "data1", size: 1 }, // stride, offset
-};
+const ATTRIBUTES = `{
+  "index": { "buffer": "data1", "size": 1 }
+}`;
 
-const UNIFORMS = {};
+const UNIFORMS = `{}`;
 
 const VERTEX = `
 attribute float index;

@@ -106,20 +106,12 @@
       </div>
     </main>
 
-    <script src="./n/2.js"></script>
+    <script src="./n/1.js"></script>
     <script>
       // update view
-      document.querySelector("[data-buffers]").innerHTML = JSON.stringify(
-        BUFFERS
-      );
-
-      document.querySelector("[data-attributes]").innerHTML = JSON.stringify(
-        ATTRIBUTES
-      );
-
-      document.querySelector("[data-uniforms]").innerHTML = JSON.stringify(
-        UNIFORMS
-      );
+      document.querySelector("[data-buffers]").innerHTML = BUFFERS;
+      document.querySelector("[data-attributes]").innerHTML = ATTRIBUTES;
+      document.querySelector("[data-uniforms]").innerHTML = UNIFORMS;
 
       // document.querySelector("[data-fragment]").innerHTML = FRAGMENT;
       document.querySelector("[data-vertex]").innerHTML = VERTEX;
@@ -131,6 +123,10 @@
 
       const WIDTH = $canvas.getBoundingClientRect().width;
       const HEIGHT = $canvas.getBoundingClientRect().height;
+
+      const _ATTRIBUTES = JSON.parse(ATTRIBUTES);
+      const _BUFFERS = JSON.parse(BUFFERS);
+      const _UNIFORMS = JSON.parse(UNIFORMS);
 
       $canvas.width = WIDTH;
       $canvas.height = HEIGHT;
@@ -159,9 +155,9 @@
       gl.linkProgram(program);
       gl.useProgram(program);
 
-      for (const attribName in ATTRIBUTES) {
-        const fattrib = ATTRIBUTES[attribName];
-        const fbuffer = BUFFERS[fattrib.buffer];
+      for (const attribName in _ATTRIBUTES) {
+        const fattrib = _ATTRIBUTES[attribName];
+        const fbuffer = _BUFFERS[fattrib.buffer];
 
         const buffer = gl.createBuffer();
         gl.bindBuffer(gl.ARRAY_BUFFER, buffer);
