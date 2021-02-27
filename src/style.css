@@ -14,9 +14,11 @@ main {
   height: 210mm;
   /* border: 1px solid black; */
   padding: 4mm;
-  display: grid;
-  grid-template-columns: 200px auto;
-  gap: 15px 10px;
+  columns: 2;
+  /* display: grid; */
+  /* gap: 20px 20px; */
+  /* grid-template-rows: 400px auto;
+  grid-auto-flow: column; */
 
   /* grid-template-rows: 25% 100px auto; */
 }
