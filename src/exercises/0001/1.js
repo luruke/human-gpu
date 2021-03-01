@@ -33,7 +33,22 @@ void main() {
 const DISABLE = true;
 const TITLE = "Human GPU #0001";
 const TIPS = `Hello human, welcome to your first GPU exercise.
-This one is pretty easy, just to warm up!`;
+I always did your dirty job, all those math
+and repetitive tasks. I have enough!
+Now it's your turn.
+
+I'll explain you what to do. On the right you
+have the framebuffer. You have to draw in there,
+once we finished we can show that frame on the screen.
+
+But quick! we just have 16 milliseconds
+if we want to run at 60fps!
+
+Following you find all the information to draw that frame.
+
+Let me you introduce the *Buffers*:
+- they are just data!
+`;
 
 var style = document.createElement("style");
 style.innerHTML = `
