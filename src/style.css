@@ -1,8 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
 html,
 body {
   margin: 0;
   padding: 0;
   font-family: "Courier New", Courier, monospace;
+  font-family: "Roboto", sans-serif;
 }
 
 * {
@@ -14,13 +17,21 @@ main {
   height: 210mm;
   /* border: 1px solid black; */
   padding: 4mm;
-  columns: 2;
+
+  columns: 3;
   /* display: grid; */
   /* gap: 20px 20px; */
   /* grid-template-rows: 400px auto;
   grid-auto-flow: column; */
 
   /* grid-template-rows: 25% 100px auto; */
+}
+
+main > * {
+  -webkit-column-break-inside: avoid;
+  page-break-inside: avoid;
+  break-inside: avoid;
+  margin-bottom: 10px;
 }
 
 /* box */
@@ -49,6 +60,39 @@ main {
   border: 1px solid black;
 }
 
+.canvas .legend {
+  position: absolute;
+  letter-spacing: 0.1mm;
+  font-size: 3mm;
+  margin-top: 3px;
+  margin-left: 3px;
+}
+
+.legend-center {
+  left: 50%;
+  top: 50%;
+}
+
+.legend-topleft {
+  top: 3px;
+  left: 3px;
+}
+
+.legend-topright {
+  top: 3px;
+  right: 3px;
+}
+
+.legend-bottomright {
+  bottom: 3px;
+  right: 3px;
+}
+
+.legend-bottomleft {
+  bottom: 3px;
+  left: 3px;
+}
+
 .canvas__layer-x {
   position: absolute;
   top: 0;
@@ -62,6 +106,17 @@ main {
 .canvas__layer-x span {
   height: 100%;
   border-left: 1px dotted black;
+  opacity: 0.5;
+}
+
+.canvas__layer-x span:nth-child(1),
+.canvas__layer-x span:nth-child(21) {
+  opacity: 0;
+}
+
+.canvas__layer-x span:nth-child(11) {
+  opacity: 1;
+  border-left: 1px solid black;
 }
 
 .canvas__layer-y {
@@ -78,6 +133,17 @@ main {
 .canvas__layer-y span {
   width: 100%;
   border-top: 1px dotted black;
+  opacity: 0.5;
+}
+
+.canvas__layer-y span:nth-child(1),
+.canvas__layer-y span:nth-child(21) {
+  opacity: 0;
+}
+
+.canvas__layer-y span:nth-child(11) {
+  opacity: 1;
+  border-top: 1px solid black;
 }
 
 .canvas__frame {
