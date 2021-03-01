@@ -32,7 +32,7 @@ void main() {
 
 const DISABLE = false;
 const TITLE = "Human GPU #0001";
-const TIPS = `Hello human! I'm the graphics processing unit running under your WebGL application. I always do your dirty job, with all those math expressions and repetitive tasks. I have enough! I need some damn vacation, that's for sure...Now it's your turn.
+const TIPS = `Hello human! I'm the graphics processing unit doing all the heavy lifting under your WebGL application. I always do your dirty job, with all those math expressions and repetitive tasks. I have enough! I need some damn vacation...Now it's your turn.
 
 Don't worry, I'll explain you what to do step by step. On the right you have a grid with the framebuffer. Your job is to to draw the final frame.
 
@@ -45,19 +45,26 @@ Let me you introduce the *Buffers*:
 ahh, then we have the dears *Attributes*:
 - They are the "pointer|interface" that lets you read from buffers
 
-In this example, we have one attribute called \`id\` that lets you read from \`data1\` one element at the time.
+In this example, we have one attribute called \`id\` that lets you read from \`data1\` one element at the time. (because \`size\` is \`1\`)
 
 Then we have the two *Shaders*, small GLSL programs that you will be using to draw the shape and color our final image.
 
+Once you finish to draw you can send it on the screen and show the final image to the user. But be quick! We just have 16 milliseconds!
+
+Now go and draw \`1 triangle\`!
+If you don't know human, a triangle have 3 points (or vertices).
+
 Still confused? right...it's your first time...ok
 
-In this case, the v
+We have to draw one triangle (3 points), so our vertex shader will be "executed" three times.
 
-Once you finish to draw you can send it on the screen and show the final image to the user.
-But be quick! We just have 16 milliseconds!
+The main job of the vertex shader is to set the special variable \`gl_Position\`.
 
-That being said, you should have everything you need, now go and draw \`1 triangle\`!
-If you don't know human, a triangle have 3 points (or vertices).
+This variable contains in the order the X, Y, Z, W of the Normalized Device Coordinates (or NDC).
+It' similar to your human Cartesian coordinate system, It's just that it's a bit messed up and it goes from -1 to +1.
+
+For the moment you just need to use the X and Y property.
+To help you out, i've added on each corner the coordinate (X, Y) reference. Each square measures 0.1 NDC.
 `;
 
 const RUN = (gl) => {
@@ -66,8 +73,15 @@ const RUN = (gl) => {
 
 var style = document.createElement("style");
 style.innerHTML = `
-.box-uniforms {
-  // display: none;
+.box {
+  width: 290px;
+}
+.box-tips {
+  width: 380px;
+}
+.box-tips code {
+  font-size: 9px;
+  letter-spacing: 0px;
 }
 
 .canvas {
