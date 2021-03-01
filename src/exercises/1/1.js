@@ -30,7 +30,8 @@ void main() {
   gl_FragColor = vec4(0.0, 0.0, 0.0, 1.0);
 }`;
 
-const DISABLE = false;
+const HIDE_FRAGMENT = true
+const DISABLE = true;
 const TITLE = "Human GPU #0001";
 const TIPS = `Hello human! I'm the graphics processing unit doing all the heavy lifting under your WebGL application. I always do your dirty job, with all those math expressions and repetitive tasks. I have enough! I need some damn vacation...Now it's your turn.
 
@@ -47,25 +48,29 @@ ahh, then we have the dears *Attributes*:
 
 In this example, we have one attribute called \`id\` that lets you read from \`data1\` one element at the time. (because \`size\` is \`1\`)
 
-Then we have the two *Shaders*, small GLSL programs that you will be using to draw the shape and color our final image.
+Then we have the *Vertex shader*, a small GLSL programs that you will be using to draw the shape of your image.
 
 Once you finish to draw you can send it on the screen and show the final image to the user. But be quick! We just have 16 milliseconds!
 
-Now go and draw \`1 triangle\`!
-If you don't know human, a triangle have 3 points (or vertices).
+Now go and draw \`1 triangle\`! If you don't know human, a triangle have 3 points (or vertices).
 
 Still confused? right...it's your first time...ok
 
 We have to draw one triangle (3 points), so our vertex shader will be "executed" three times.
 
-The main job of the vertex shader is to set the special variable \`gl_Position\`.
+After you execute the vertex shader (in your mind 🤯), you can read the special variable \`gl_Position\`.
 
 This variable contains in the order the X, Y, Z, W of the Normalized Device Coordinates (or NDC).
 It' similar to your human Cartesian coordinate system, It's just that it's a bit messed up and it goes from -1 to +1.
 
-For the moment you just need to use the X and Y property.
-To help you out, i've added on each corner the coordinate (X, Y) reference. Each square measures 0.1 NDC.
-`;
+For the moment you just need to use the X and Y property. Z will always be \`0.0\` and W will always be \`1.0\` for now.
+To help you out, I've added on each corner the coordinate (X, Y) reference. Plus each square measures 0.1 NDC.
+
+If I were you, I would:
+1) Execute the vertex shader. Pay attention that attribute \`id\` will change at each invocation.
+2) Read gl_Position X and Y and draw a little dot
+3) Repeat step 1 and 2 three times
+4) Draw a line that unites the three dots (I call this primitive assembly)`;
 
 const RUN = (gl) => {
   gl.drawArrays(gl.TRIANGLES, 0, 3);

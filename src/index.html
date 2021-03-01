@@ -170,6 +170,12 @@
           .removeChild(document.querySelector(".box-uniforms"));
       }
 
+      if (HIDE_FRAGMENT) {
+        document
+          .querySelector("main")
+          .removeChild(document.querySelector(".box-fragment"));
+      }
+
       $("main").isotope({
         layoutMode: "fitColumns",
         itemSeletor: ".box",
