@@ -10,7 +10,14 @@
   </head>
   <body>
     <main>
-      <div class="box">
+      <div class="box box-tips">
+        <div class="box__title" data-title>Human GPU</div>
+        <pre class="box__content">
+<code class="language-markdown" data-tips></code>
+          </pre>
+      </div>
+
+      <div class="box box-buffers">
         <div class="box__title">Buffers</div>
         <pre class="box__content">
 <code class="language-javascript" data-buffers></code>
@@ -18,7 +25,7 @@
       </div>
       <!-- box -->
 
-      <div class="box">
+      <div class="box box-attributes">
         <div class="box__title">Attributes</div>
         <pre class="box__content">
 <code class="language-javascript" data-attributes></code>
@@ -26,7 +33,7 @@
       </div>
       <!-- box -->
 
-      <div class="box">
+      <div class="box box-uniforms">
         <div class="box__title">Uniforms</div>
         <pre class="box__content">
 <code class="language-javascript" data-uniforms></code>
@@ -34,17 +41,17 @@
       </div>
       <!-- box -->
 
-      <div class="box">
+      <div class="box box-vertex">
         <div class="box__title">Vertex shader</div>
         <pre class="box__content">
 <code class="language-glsl" data-vertex></code>
             </pre>
       </div>
 
-      <div class="box">
+      <div class="box box-fragment">
         <div class="box__title">Fragment shader</div>
         <pre class="box__content">
-<code class="language-glsl" data-fragment></code>
+<code class="language-c" data-fragment></code>
             </pre>
       </div>
 
@@ -104,10 +111,12 @@
         <span class="legend legend-bottomright">(1, -1)</span>
         <span class="legend legend-bottomleft">(-1, -1)</span>
       </div>
+
+      <!-- <p class="title">Human GPU #0001</p> -->
     </main>
 
     <script src="./prism.js"></script>
-    <script src="./n/1.js"></script>
+    <script src="./exercises/0001/1.js"></script>
     <script>
       // update view
       document.querySelector("[data-buffers]").innerHTML = BUFFERS;
@@ -117,6 +126,8 @@
       // document.querySelector("[data-fragment]").innerHTML = FRAGMENT;
       document.querySelector("[data-vertex]").innerHTML = VERTEX;
       document.querySelector("[data-fragment]").innerHTML = FRAGMENT;
+      document.querySelector("[data-title]").innerHTML = TITLE;
+      document.querySelector("[data-tips]").innerHTML = TIPS;
 
       // start real deal
       const $canvas = document.querySelector(".canvas__frame");

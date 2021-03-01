@@ -161,3 +161,16 @@ main > * {
   height: 100%;
   z-index: 5;
 }
+
+.title {
+  position: absolute;
+  bottom: 3mm;
+  right: 3mm;
+  display: inline;
+  width: auto;
+  margin: 0;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  transform: rotate(180deg);
+  font-size: 8px;
+}
