@@ -13,12 +13,15 @@ body {
 }
 
 main {
+  position: relative;
   width: 297mm;
   height: 210mm;
   /* border: 1px solid black; */
   padding: 4mm;
-
-  columns: 3;
+  columns: 1;
+  padding-right: 130mm;
+  /* columns: 2;
+  padding-right: 480px; */
   /* display: grid; */
   /* gap: 20px 20px; */
   /* grid-template-rows: 400px auto;
@@ -32,11 +35,12 @@ main > * {
   page-break-inside: avoid;
   break-inside: avoid;
   margin-bottom: 10px;
+  width: 100mm;
 }
 
 /* box */
 .box {
-  border: 1px solid black;
+  border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 2.5mm;
   overflow: hidden;
 }
@@ -46,18 +50,23 @@ main > * {
 }
 
 .box__title {
-  border-bottom: 1px dotted black;
+  /* border-bottom: 1px dotted black; */
   font-size: 12px;
-  padding: 2mm;
-  font-weight: 600;
+  padding: 1.8mm;
+  text-align: center;
+  font-style: italic;
+  /* font-weight: 600; */
 }
 
 /* canvas */
 .canvas {
-  position: relative;
-  width: 120mm;
-  height: 120mm;
-  border: 1px solid black;
+  position: absolute;
+  top: 4mm;
+  right: 4mm;
+  width: 100mm;
+  height: 100mm;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 7px;
 }
 
 .canvas .legend {
