@@ -1,5 +1,31 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
 
+@page {
+  size: A4 landscape;
+}
+
+body {
+  background: rgb(204, 204, 204);
+}
+
+page[size="A4"] {
+  background: white;
+  height: 21cm;
+  width: 29.7cm;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 0.5cm;
+  box-shadow: 0 0 0.5cm rgba(0, 0, 0, 0.5);
+}
+
+@media print {
+  body,
+  page[size="A4"] {
+    margin: 0;
+    box-shadow: 0;
+  }
+}
+
 html,
 body {
   margin: 0;
@@ -14,28 +40,34 @@ body {
 
 main {
   position: relative;
-  width: 297mm;
-  height: 210mm;
+  width: 100%;
+  height: 100%;
+  /* width: 1169px;
+  height: 826px; */
+  padding: 10mm;
+  /* columns: 1;
+  padding-right: 336px; */
+  /* padding-right: 130mm; */
+  /* padding-right: 180mm; */
   /* border: 1px solid black; */
-  padding: 4mm;
-  columns: 1;
-  padding-right: 130mm;
-  /* columns: 2;
-  padding-right: 480px; */
-  /* display: grid; */
-  /* gap: 20px 20px; */
-  /* grid-template-rows: 400px auto;
-  grid-auto-flow: column; */
-
-  /* grid-template-rows: 25% 100px auto; */
 }
 
 main > * {
-  -webkit-column-break-inside: avoid;
+  /* -webkit-column-break-inside: avoid;
   page-break-inside: avoid;
   break-inside: avoid;
-  margin-bottom: 10px;
-  width: 100mm;
+  margin-bottom: 10px; */
+  /* width: 100mm; */
+}
+
+.box {
+  width: 350px;
+  margin-bottom: 20px;
+  margin-right: 20px;
+}
+
+code {
+  white-space: break-spaces !important;
 }
 
 /* box */
@@ -61,8 +93,8 @@ main > * {
 /* canvas */
 .canvas {
   position: absolute;
-  top: 4mm;
-  right: 4mm;
+  top: 10mm;
+  right: 10mm;
   width: 100mm;
   height: 100mm;
   border: 1px solid rgba(0, 0, 0, 0.3);

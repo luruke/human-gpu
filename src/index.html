@@ -7,116 +7,135 @@
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="prism.css" />
     <title>Document</title>
+
+    <script>
+      var toload = "1";
+      var mat = document.location.search.match(/n=(.*)/)
+      if (mat && mat[1]) {
+        toload = mat[1]
+      }
+
+      let myScript = document.createElement("script");
+      myScript.setAttribute("src", `./exercises/${toload}/${toload}.js`);
+
+      let head = document.head;
+      head.insertBefore(myScript, head.firstElementChild);
+    </script>
   </head>
   <body>
-    <main>
-      <div class="box box-tips">
-        <div class="box__title" data-title>Human GPU</div>
-        <pre class="box__content">
+    <page size="A4">
+      <main>
+        <div class="box box-tips">
+          <div class="box__title" data-title>Human GPU</div>
+          <pre class="box__content">
 <code class="language-markdown" data-tips></code>
           </pre>
-      </div>
+        </div>
 
-      <div class="box box-buffers">
-        <div class="box__title">Buffers</div>
-        <pre class="box__content">
+        <div class="box box-buffers">
+          <div class="box__title">Buffers</div>
+          <pre class="box__content">
 <code class="language-javascript" data-buffers></code>
           </pre>
-      </div>
-      <!-- box -->
+        </div>
+        <!-- box -->
 
-      <div class="box box-attributes">
-        <div class="box__title">Attributes</div>
-        <pre class="box__content">
+        <div class="box box-attributes">
+          <div class="box__title">Attributes</div>
+          <pre class="box__content">
 <code class="language-javascript" data-attributes></code>
           </pre>
-      </div>
-      <!-- box -->
+        </div>
+        <!-- box -->
 
-      <div class="box box-uniforms">
-        <div class="box__title">Uniforms</div>
-        <pre class="box__content">
+        <div class="box box-uniforms">
+          <div class="box__title">Uniforms</div>
+          <pre class="box__content">
 <code class="language-javascript" data-uniforms></code>
           </pre>
-      </div>
-      <!-- box -->
+        </div>
+        <!-- box -->
 
-      <div class="box box-vertex">
-        <div class="box__title">Vertex shader</div>
-        <pre class="box__content">
+        <div class="box box-vertex">
+          <div class="box__title">Vertex shader</div>
+          <pre class="box__content">
 <code class="language-glsl" data-vertex></code>
             </pre>
-      </div>
+        </div>
 
-      <div class="box box-fragment">
-        <div class="box__title">Fragment shader</div>
-        <pre class="box__content">
+        <div class="box box-fragment">
+          <div class="box__title">Fragment shader</div>
+          <pre class="box__content">
 <code class="language-c" data-fragment></code>
             </pre>
-      </div>
-
-      <div class="canvas">
-        <canvas class="canvas__frame"></canvas>
-        <div class="canvas__layer-x">
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
         </div>
 
-        <div class="canvas__layer-y">
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
+        <div class="canvas">
+          <canvas class="canvas__frame"></canvas>
+          <div class="canvas__layer-x">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+
+          <div class="canvas__layer-y">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+
+          <span class="legend legend-center">(0, 0)</span>
+          <span class="legend legend-topleft">(-1, 1)</span>
+          <span class="legend legend-topright">(1, 1)</span>
+          <span class="legend legend-bottomright">(1, -1)</span>
+          <span class="legend legend-bottomleft">(-1, -1)</span>
         </div>
 
-        <span class="legend legend-center">(0, 0)</span>
-        <span class="legend legend-topleft">(-1, 1)</span>
-        <span class="legend legend-topright">(1, 1)</span>
-        <span class="legend legend-bottomright">(1, -1)</span>
-        <span class="legend legend-bottomleft">(-1, -1)</span>
-      </div>
+        <!-- <p class="title">Human GPU #0001</p> -->
+      </main>
+    </page>
 
-      <!-- <p class="title">Human GPU #0001</p> -->
-    </main>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script src="https://isotope.metafizzy.co/isotope.pkgd.js"></script>
+    <script src="https://npmcdn.com/isotope-masonry-horizontal@2/masonry-horizontal.js"></script>
+    <script src="https://npmcdn.com/isotope-fit-columns@1/fit-columns.js"></script>
     <script src="./prism.js"></script>
-    <script src="./exercises/0001/1.js"></script>
     <script>
       // update view
       document.querySelector("[data-buffers]").innerHTML = BUFFERS;
@@ -144,6 +163,21 @@
       $canvas.height = HEIGHT;
 
       gl.viewport(0, 0, WIDTH, HEIGHT);
+
+      if (!Object.keys(_UNIFORMS).length) {
+        document
+          .querySelector("main")
+          .removeChild(document.querySelector(".box-uniforms"));
+      }
+
+      $("main").isotope({
+        layoutMode: "fitColumns",
+        itemSeletor: ".box",
+      });
+
+      window.setTimeout(() => {
+        $("main").isotope("layout");
+      }, 500);
 
       function compileShader(gl, shaderSource, shaderType) {
         var shader = gl.createShader(shaderType);
@@ -186,9 +220,11 @@
 
       gl.clearColor(1, 1, 1, 0);
       gl.clear(gl.COLOR_BUFFER_BIT);
+      // gl.enable(gl.CULL_FACE);
+      // gl.cullFace(gl.FRONT_AND_BACK);
 
       if (!DISABLE) {
-        gl.drawArrays(gl.TRIANGLES, 0, 3);
+        RUN && RUN(gl)
       }
     </script>
   </body>
