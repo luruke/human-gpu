@@ -40,5 +40,10 @@ style.innerHTML = `
 .box-uniforms {
   display: none;
 }
+
+.canvas {
+  width: 160mm;
+  height: 160mm;
+}
 `;
 document.head.appendChild(style);
