@@ -15,7 +15,7 @@ Draw a rectangle
 
 # 0004
 
-Uniforms
+Indexed drawing
 
 # 0005
 
