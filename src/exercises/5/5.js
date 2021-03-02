@@ -30,12 +30,13 @@ void main() {
   gl_FragColor = vec4(0.0, 0.0, 0.0, 1.0);
 }`;
 
-const DISABLE = false;
 const HIDE_FRAGMENT = true;
 const TITLE = "Human GPU #0005 – multiple attributes";
 const TIPS = `Heya human, of course you can have multiple attributes and buffers, like in this example.
 
-It's up to our app how to structure and deliver data to our vertices.`;
+It's up to our app how to structure and deliver data to our vertices.
+
+Now draw me a triangle, human!`;
 
 const RUN = (gl) => {
   gl.drawArrays(gl.TRIANGLES, 0, 3);

@@ -31,7 +31,6 @@ void main() {
 }`;
 
 const HIDE_FRAGMENT = true;
-const DISABLE = true;
 const TITLE = "Human GPU #0001 – The intro";
 const TIPS = `Hello human! I'm the graphics processing unit doing all the heavy lifting under your WebGL application. I always do your dirty job, with all those math expressions and repetitive tasks. I have enough! I need some damn vacation...Now it's your turn.
 

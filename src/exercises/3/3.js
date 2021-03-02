@@ -24,7 +24,6 @@ void main() {
   gl_FragColor = vec4(0.0, 0.0, 0.0, 1.0);
 }`;
 
-const DISABLE = false;
 const HIDE_FRAGMENT = true;
 const TITLE = "Human GPU #0003 – Only triangle?";
 const TIPS = `Hello again human. I guess you're wondering...how do we draw other stuff then just triangles?

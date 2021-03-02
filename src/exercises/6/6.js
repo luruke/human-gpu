@@ -32,7 +32,6 @@ void main() {
   gl_FragColor = vec4(0.0, 0.0, 0.0, 1.0);
 }`;
 
-const DISABLE = false;
 const HIDE_FRAGMENT = true;
 const TITLE = "Human GPU #0006 – buffer + attribute pr0 l337";
 const TIPS = `Multiple attribute can read from the same buffer, like in this example.
@@ -56,7 +55,8 @@ Buffer too can have different property, like:
 
 
 Heya human, by now you should well understand how the relationship between buffer and attributes works.
-`;
+
+Can you draw a triangle for me?`;
 
 const RUN = (gl) => {
   gl.drawArrays(gl.TRIANGLES, 0, 3);

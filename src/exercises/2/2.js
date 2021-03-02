@@ -20,7 +20,6 @@ void main() {
   gl_FragColor = vec4(0.0, 0.0, 0.0, 1.0);
 }`;
 
-const DISABLE = true;
 const HIDE_FRAGMENT = true;
 const TITLE = "Human GPU #0002 – Position attribute";
 const TIPS = `Wow man...you took AAAAGEEES to draw that first triangle...hopefully you will draw faster this time.
