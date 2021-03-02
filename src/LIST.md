@@ -15,9 +15,21 @@ Draw a rectangle
 
 # 0004
 
-Indexed drawing
+Messup, vecfour?
 
 # 0005
+
+multiple attributes
+
+# 0006
+
+buffer + attribute pr0 l337 (offset, stride)
+
+# 0007
+
+Indexed drawing
+
+# 0008
 
 Uniforms
 

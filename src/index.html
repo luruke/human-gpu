@@ -10,9 +10,9 @@
 
     <script>
       var toload = "1";
-      var mat = document.location.search.match(/n=(.*)/)
+      var mat = document.location.search.match(/n=(.*)/);
       if (mat && mat[1]) {
-        toload = mat[1]
+        toload = mat[1];
       }
 
       let myScript = document.createElement("script");
@@ -221,7 +221,18 @@
 
         const location = gl.getAttribLocation(program, attribName);
         gl.enableVertexAttribArray(location);
-        gl.vertexAttribPointer(location, fattrib.size, gl.FLOAT, false, 0, 0);
+
+        const stride = 0;
+        const offset = fattrib.offset || 0;
+
+        gl.vertexAttribPointer(
+          location,
+          fattrib.size,
+          gl.FLOAT,
+          false,
+          stride,
+          offset * 4 // 4 byte for float
+        );
       }
 
       gl.clearColor(1, 1, 1, 0);
@@ -230,7 +241,7 @@
       // gl.cullFace(gl.FRONT_AND_BACK);
 
       if (!DISABLE) {
-        RUN && RUN(gl)
+        RUN && RUN(gl);
       }
     </script>
   </body>
