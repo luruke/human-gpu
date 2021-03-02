@@ -12,28 +12,33 @@ const VERTEX = `attribute vec2 pos;
 
 void main() {
   gl_Position = vec4(pos, 0.0, 1.0);
+
+  // gl_Position = vec4(pos.xy, 1.0);
+  // gl_Position = vec4(pos.x, pos.y, 0.0, 1.0);
 }`;
 
 const FRAGMENT = `precision highp float;
 
 void main() {
-  gl_FragColor = vec4(1.0, 0.0, 0.0, 1.0);
+  gl_FragColor = vec4(0.0, 0.0, 0.0, 1.0);
 }`;
 
 const DISABLE = false;
+const HIDE_FRAGMENT = true;
 const TITLE = "Human GPU #0003";
 const TIPS = `Hello human! I'm the graphics processing unit running under your WebGL application. I always do your dirty job, with all those math expressions and repetitive tasks. I have enough! I need some damn vacation, that's for sure...Now it's your turn.
 `;
 
 const RUN = (gl) => {
   gl.drawArrays(gl.TRIANGLES, 0, 6);
-}
+};
 
 var style = document.createElement("style");
 style.innerHTML = `
-.box-uniforms {
-  // display: none;
+.box {
+  width: 400px;
 }
+
 
 .canvas {
   width: 80mm;

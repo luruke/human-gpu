@@ -3,11 +3,11 @@ It doesn't want to replace classic and complete WebGL resource like MDN, learnop
 
 # 0001
 
-Introducing the project.
+The intro
 
 # 0002
 
-Dynamic position via attribute
+Position attribute
 
 # 0003
 
