@@ -36,12 +36,14 @@ void main() {
 
 const HIDE_FRAGMENT = true;
 const TITLE = "Human GPU #0009 – Uniforms";
-const TIPS = `Introducing uniforms!
+const TIPS = `Huuuuumaaan, today we are introducing uniforms!
 As you can see we have a new "box" called Uniforms.
 
 Those are just constants that can be easily read in the shader via \`uniform $type $name;\`, where \`$type\` is usually \`float, vec* or mat*\`.
 
-Uniforms are the best and fastest way to receive small bits of data in our shaders.`;
+Uniforms are the best and fastest way to receive small bits of data in our shaders.
+
+Show me what you got! Draw me 2 triangles`;
 
 const RUN = (gl) => {
   gl.drawArrays(gl.TRIANGLES, 0, 2 * 3);

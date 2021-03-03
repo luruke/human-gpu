@@ -37,6 +37,24 @@ Indexed drawing
 
 Uniforms
 
-# 000x
+# 0010
 
-Fragment shader and rasterization process
+Uniforms 2
+
+TODO
+
+# 0011
+
+Fragment shader
+
+# 0012
+
+Fragment shader 2
+
+# 0013
+
+Fragment shader 3
+
+# 0013
+
+Introducing 3D

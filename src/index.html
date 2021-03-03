@@ -117,22 +117,22 @@
       </main>
     </page>
 
-    <script src="./vendor/jquery.js"></script>
     <script src="./vendor/isotope.js"></script>
-    <script src="./vendor/masonry-horizontal.js"></script>
     <script src="./vendor/fit-columns.js"></script>
     <script>
       function run() {
         // update view
-        document.querySelector("[data-buffers]").innerHTML = BUFFERS;
-        document.querySelector("[data-attributes]").innerHTML = ATTRIBUTES;
-        document.querySelector("[data-uniforms]").innerHTML = UNIFORMS;
+        const root = document.querySelector("main");
 
-        // document.querySelector("[data-fragment]").innerHTML = FRAGMENT;
-        document.querySelector("[data-vertex]").innerHTML = VERTEX;
-        document.querySelector("[data-fragment]").innerHTML = FRAGMENT;
-        document.querySelector("[data-title]").innerHTML = TITLE;
-        document.querySelector("[data-tips]").innerHTML = TIPS;
+        root.querySelector("[data-buffers]").innerHTML = BUFFERS;
+        root.querySelector("[data-attributes]").innerHTML = ATTRIBUTES;
+        root.querySelector("[data-uniforms]").innerHTML = UNIFORMS;
+
+        // root.querySelector("[data-fragment]").innerHTML = FRAGMENT;
+        root.querySelector("[data-vertex]").innerHTML = VERTEX;
+        root.querySelector("[data-fragment]").innerHTML = FRAGMENT;
+        root.querySelector("[data-title]").innerHTML = TITLE;
+        root.querySelector("[data-tips]").innerHTML = TIPS;
 
         let prism = document.createElement("script");
         prism.src = `./vendor/prism.js`;
@@ -156,24 +156,22 @@
         gl.viewport(0, 0, WIDTH, HEIGHT);
 
         if (!Object.keys(_UNIFORMS).length) {
-          document
-            .querySelector("main")
-            .removeChild(document.querySelector(".box-uniforms"));
+          root.removeChild(root.querySelector(".box-uniforms"));
         }
 
         if (HIDE_FRAGMENT) {
-          document
-            .querySelector("main")
-            .removeChild(document.querySelector(".box-fragment"));
+          root.removeChild(root.querySelector(".box-fragment"));
         }
 
-        $("main").isotope({
+        let iso = new Isotope(root, {
           layoutMode: "fitColumns",
           itemSeletor: ".box",
+          transitionDuration: 0,
         });
 
         window.setTimeout(() => {
-          $("main").isotope("layout");
+          // $("main").isotope("layout");
+          iso.layout();
         }, 500);
 
         function compileShader(gl, shaderSource, shaderType) {
@@ -240,14 +238,16 @@
         for (i in _UNIFORMS) {
           const loc = gl.getUniformLocation(program, i);
           const value = _UNIFORMS[i];
-          gl.uniform1f(loc, value);
 
-          console.log(i, value);
+          if (value.length == 2) {
+            gl.uniform2fv(loc, value);
+          } else {
+            gl.uniform1f(loc, value);
+          }
         }
 
         gl.clearColor(1, 1, 1, 0);
         gl.clear(gl.COLOR_BUFFER_BIT);
-        // gl.enable(gl.CULL_FACE);
 
         if (!window.location.search.match(/hide/)) {
           RUN && RUN(gl);
