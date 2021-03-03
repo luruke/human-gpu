@@ -60,6 +60,21 @@ style.innerHTML = `
   width: 400px;
 }
 
+main::after {
+  content: '';
+    display: block;
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background-image: url(./exercises/8/annotation.svg);
+    z-index: 10;
+    top: 397px;
+    background-repeat: no-repeat;
+    left: 45px;
+    opacity: .3;
+    pointer-events: none;
+}
+
 
 .canvas {
   width: 100mm;

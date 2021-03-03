@@ -30,6 +30,8 @@ Even if you have a human brain, you can easily understand that float = 1 value, 
 
 Just so you know, in our exercises we're going to use GLSL ES version 1.0 that ships with WebGL 1.0.
 
+I have added some annotation that should help you understand how attribute works.
+
 Now go, and draw me a triangle! Quick! Quick!`;
 
 const RUN = (gl) => {
@@ -50,7 +52,7 @@ main::after {
     height: 300px;
     background-image: url(./exercises/2/annotation.svg);
     z-index: 10;
-    top: 316px;
+    top: 353px;
     background-repeat: no-repeat;
     left: 32px;
     opacity: .3;

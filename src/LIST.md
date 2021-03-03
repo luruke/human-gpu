@@ -27,9 +27,13 @@ buffer + attribute pr0 l337 (offset, stride)
 
 # 0007
 
-Indexed drawing
+exercise
 
 # 0008
+
+Indexed drawing
+
+# 0009
 
 Uniforms
 

@@ -121,7 +121,6 @@
     <script src="./vendor/isotope.js"></script>
     <script src="./vendor/masonry-horizontal.js"></script>
     <script src="./vendor/fit-columns.js"></script>
-    <script src="./vendor/prism.js"></script>
     <script>
       function run() {
         // update view
@@ -134,6 +133,11 @@
         document.querySelector("[data-fragment]").innerHTML = FRAGMENT;
         document.querySelector("[data-title]").innerHTML = TITLE;
         document.querySelector("[data-tips]").innerHTML = TIPS;
+
+        let prism = document.createElement("script");
+        prism.src = `./vendor/prism.js`;
+
+        document.head.appendChild(prism);
 
         // start real deal
         const $canvas = document.querySelector(".canvas__frame");
@@ -233,6 +237,14 @@
           );
         }
 
+        for (i in _UNIFORMS) {
+          const loc = gl.getUniformLocation(program, i);
+          const value = _UNIFORMS[i];
+          gl.uniform1f(loc, value);
+
+          console.log(i, value);
+        }
+
         gl.clearColor(1, 1, 1, 0);
         gl.clear(gl.COLOR_BUFFER_BIT);
         // gl.enable(gl.CULL_FACE);
@@ -245,7 +257,7 @@
 
     <script>
       var toload = "1";
-      var mat = document.location.search.match(/n=(\d)/);
+      var mat = document.location.search.match(/n=(\d*)/);
       if (mat && mat[1]) {
         toload = mat[1];
       }
@@ -253,7 +265,6 @@
       let script = document.createElement("script");
       script.src = `./exercises/${toload}/${toload}.js`;
       script.onload = () => {
-        console.log("ready", BUFFERS);
         run();
       };
 
