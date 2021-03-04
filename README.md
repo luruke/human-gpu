@@ -15,6 +15,8 @@ Each exercise is accompanied by its solution that shows the final frame.
 
 This is still a work-in-progress thing, surely full of typos and subject to changes.
 
+![](https://i.giphy.com/media/Y0y50KCiSfzXzKyYiu/source.gif)
+
 - [#0001 - The intro](https://github.com/luruke/human-gpu/blob/main/exercises/0001.pdf)
 - [#0002 - Position attribute](https://github.com/luruke/human-gpu/blob/main/exercises/0002.pdf)
 - [#0003 - Only triangle?](https://github.com/luruke/human-gpu/blob/main/exercises/0003.pdf)
