@@ -17,6 +17,7 @@ const VERTEX = `attribute vec2 position;
 
 void main() {
   gl_Position = vec4(position / 10.0, 0.0, 1.0);
+  gl_Position.y = max(-0.5, gl_Position.y);
 }`;
 
 const FRAGMENT = `precision highp float;
@@ -27,7 +28,9 @@ void main() {
 
 const HIDE_FRAGMENT = true;
 const TITLE = "Human GPU #0007 – Do you love GPU?";
-const TIPS = `Hey human, long time no see you, can you draw for me 4 triangles?`;
+const TIPS = `Hey human, long time no see you...can you draw for me 4 triangles?
+
+In GLSL there are some built-in functions, like \`max\`, which returns the larger of the two arguments.`;
 
 const RUN = (gl) => {
   gl.drawArrays(gl.TRIANGLES, 0, 4 * 3);

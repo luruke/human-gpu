@@ -2,10 +2,18 @@
 
 ❗️ Super beta ❗️
 
+![picture head](https://cdn-images-1.medium.com/max/1200/1*aMFjS2fG43qh5vH0J2QvLg.jpeg)
+
 A series of exercises that aims to teach the basic of the WebGL/OpenGL pipeline.
 The excercises are made to be printed and done in old-fashion **pen and paper**.
 
+You are the GPU, you need to _read_, _parse_, _compile_ and _render_ using only the power of your mind.
+
 It's a hands on experiments, where WebGL features are introduced incrementally and where exercises are meant to be done in the correct order.
+
+Each exercise is accompanied by its solution that shows the final frame.
+
+This is still a work-in-progress thing, surely full of typos and subject to changes.
 
 - [#0001 - The intro](https://github.com/luruke/human-gpu/blob/main/exercises/0001.pdf)
 - [#0002 - Position attribute](https://github.com/luruke/human-gpu/blob/main/exercises/0002.pdf)
@@ -20,8 +28,6 @@ It's a hands on experiments, where WebGL features are introduced incrementally a
 - #0011... To be done
 - #0012... To be done
 - #0013... To be done
-- #0014... To be done
-- #0015... To be done
-- #0016... To be done
+- ...
 
 [Download all](https://github.com/luruke/human-gpu/archive/main.zip)
