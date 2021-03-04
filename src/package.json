@@ -4,7 +4,7 @@
   "description": "an hands on crash course on GPU.",
   "main": "index.js",
   "scripts": {
-    "start": "./node_modules/http-server/bin/http-server html & node gen-pdf.js"
+    "start": "./node_modules/http-server/bin/http-server html & node gen-pdf.js && pkill http-server"
   },
   "repository": {
     "type": "git",

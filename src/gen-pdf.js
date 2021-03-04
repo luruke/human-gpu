@@ -30,7 +30,7 @@ const delay = (t) => {
 
   for (let i = 1; i < 11; i++) {
     const name = i.toString().padStart(4, "0");
-    const url = `http://127.0.0.1:8099/index.html?n=${i}`;
+    const url = `http://127.0.0.1:8080/index.html?n=${i}`;
     const excercise = `../exercises/${name}.pdf`;
     const solution = `../solutions/${name}.pdf`;
 

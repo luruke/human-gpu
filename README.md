@@ -5,6 +5,17 @@ an hands on crash course on GPU.
 It's a hands on experiments, where webgl features are introduced incrementally
 It doesn't want to replace classic and complete WebGL resource like MDN, learnopengl
 
+- #0001
+- #0002
+- #0003
+- #0004
+- #0005
+- #0006
+- #0007
+- #0008
+- #0009
+- #0010
+
 # 0001
 
 The intro
