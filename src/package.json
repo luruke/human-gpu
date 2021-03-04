@@ -1,0 +1,23 @@
+{
+  "name": "human-gpu",
+  "version": "1.0.0",
+  "description": "an hands on crash course on GPU.",
+  "main": "index.js",
+  "scripts": {
+    "start": "./node_modules/http-server/bin/http-server html & node gen-pdf.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luruke/human-gpu.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/luruke/human-gpu/issues"
+  },
+  "homepage": "https://github.com/luruke/human-gpu#readme",
+  "devDependencies": {
+    "http-server": "^0.12.3",
+    "puppeteer": "^8.0.0"
+  }
+}

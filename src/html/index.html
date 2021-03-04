@@ -141,7 +141,9 @@
 
         // start real deal
         const $canvas = document.querySelector(".canvas__frame");
-        const gl = $canvas.getContext("webgl");
+        const gl = $canvas.getContext("webgl", {
+          preserveDrawingBuffer: true,
+        });
 
         const WIDTH = $canvas.getBoundingClientRect().width;
         const HEIGHT = $canvas.getBoundingClientRect().height;

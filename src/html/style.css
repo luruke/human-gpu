@@ -24,6 +24,10 @@ page[size="A4"] {
     margin: 0;
     box-shadow: 0;
   }
+
+  * {
+    box-shadow: 0 !important;
+  }
 }
 
 html,
