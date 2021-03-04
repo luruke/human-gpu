@@ -1,75 +1,27 @@
-# human-gpu
+# 🧠 Human GPU Exercises.
 
-an hands on crash course on GPU.
+❗️ Super beta ❗️
 
-It's a hands on experiments, where webgl features are introduced incrementally
-It doesn't want to replace classic and complete WebGL resource like MDN, learnopengl
+A series of exercises that aims to teach the basic of the WebGL/OpenGL pipeline.
+The excercises are made to be printed and done in old-fashion **pen and paper**.
 
-- #0001
-- #0002
-- #0003
-- #0004
-- #0005
-- #0006
-- #0007
-- #0008
-- #0009
-- #0010
+It's a hands on experiments, where WebGL features are introduced incrementally and where exercises are meant to be done in the correct order.
 
-# 0001
+- [#0001 - The intro](https://github.com/luruke/human-gpu/blob/main/exercises/0001.pdf)
+- [#0002 - Position attribute](https://github.com/luruke/human-gpu/blob/main/exercises/0002.pdf)
+- [#0003 - Only triangle?](https://github.com/luruke/human-gpu/blob/main/exercises/0003.pdf)
+- [#0004 - Vecfour?](https://github.com/luruke/human-gpu/blob/main/exercises/0004.pdf)
+- [#0005 - Multiple attributes](https://github.com/luruke/human-gpu/blob/main/exercises/0005.pdf)
+- [#0006 - Buffer + attribute pr0 l337](https://github.com/luruke/human-gpu/blob/main/exercises/0006.pdf)
+- [#0007 - Do you love GPU?](https://github.com/luruke/human-gpu/blob/main/exercises/0007.pdf)
+- [#0008 - Less memory is good](https://github.com/luruke/human-gpu/blob/main/exercises/0008.pdf)
+- [#0009 - Uniforms](https://github.com/luruke/human-gpu/blob/main/exercises/0009.pdf)
+- [#0010 - Uniforms v2](https://github.com/luruke/human-gpu/blob/main/exercises/0010.pdf)
+- #0011... To be done
+- #0012... To be done
+- #0013... To be done
+- #0014... To be done
+- #0015... To be done
+- #0016... To be done
 
-The intro
-
-# 0002
-
-Position attribute
-
-# 0003
-
-Draw a rectangle
-
-# 0004
-
-Messup, vecfour?
-
-# 0005
-
-multiple attributes
-
-# 0006
-
-buffer + attribute pr0 l337 (offset, stride)
-
-# 0007
-
-exercise
-
-# 0008
-
-Indexed drawing
-
-# 0009
-
-Uniforms
-
-# 0010
-
-Uniforms 2
-
-TODO
-
-# 0011
-
-Fragment shader
-
-# 0012
-
-Fragment shader 2
-
-# 0013
-
-Fragment shader 3
-
-# 0013
-
-Introducing 3D
+[Download all](https://github.com/luruke/human-gpu/archive/main.zip)

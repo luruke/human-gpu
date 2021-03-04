@@ -33,7 +33,7 @@ void main() {
 }`;
 
 const HIDE_FRAGMENT = true;
-const TITLE = "Human GPU #0006 – buffer + attribute pr0 l337";
+const TITLE = "Human GPU #0006 – Buffer + attribute pr0 l337";
 const TIPS = `Multiple attribute can read from the same buffer, like in this example.
 
 You see that each attribute now has the \`offset\` property, means that will start reading from the buffer at index + offset.

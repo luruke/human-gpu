@@ -31,7 +31,7 @@ void main() {
 }`;
 
 const HIDE_FRAGMENT = true;
-const TITLE = "Human GPU #0005 – multiple attributes";
+const TITLE = "Human GPU #0005 – Multiple attributes";
 const TIPS = `Heya human, of course you can have multiple attributes and buffers, like in this example.
 
 It's up to our app how to structure and deliver data to our vertices.
