@@ -13,7 +13,7 @@ const ATTRIBUTES = `{
 const UNIFORMS = `{}`;
 
 const VERTEX = `attribute vec2 position;
-attribute vec2 offset;
+attribute float offset;
 attribute float scale;
 
 void main() {
