@@ -28,7 +28,7 @@ const delay = (t) => {
     });
   };
 
-  for (let i = 1; i < 11; i++) {
+  const genExercise = i => {
     const name = i.toString().padStart(4, "0");
     const url = `http://127.0.0.1:8080/index.html?n=${i}`;
     const excercise = `../exercises/${name}.pdf`;
@@ -39,10 +39,10 @@ const delay = (t) => {
     await genScreenshot(url + "&hide", excercise);
     await genScreenshot(url, solution);
   }
-  // await page.screenshot({ path: "example.png" });
-  // await page.waitForSelector(".canvas");
-  // const element = await page.$(".canvas");
-  // await element.screenshot({ path: "google.png" });
+
+  for (let i = 1; i < 11; i++) {
+    genExercise(i);
+  }
 
   await browser.close();
 })();

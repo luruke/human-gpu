@@ -1,6 +1,6 @@
 const BUFFERS = `{
   "buffer1": [
-    -0.4, -0.2, 0.2, 0.8, 0.3, -0.9,
+    -0.4, -0.2, 0.2, 0.5, 0.3, -0.9,
     -0.2, 0.4, 0.0,
     1.0, 1.0, 0.5
   ]
@@ -15,7 +15,7 @@ const ATTRIBUTES = `{
 const UNIFORMS = `{}`;
 
 const VERTEX = `attribute vec2 position;
-attribute vec2 offset;
+attribute float offset;
 attribute float scale;
 
 void main() {
