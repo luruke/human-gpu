@@ -36,6 +36,12 @@ You see that I've added two alternative version of assigning our \`gl_Position\`
 
 You also see that we multiply a vec2 with a number, that's also possible with the glsl compiler, and with human brain glsl compiler as well.
 
+Multiplying a vec2 (or any vec*) with a scalar (fancy name for a number) results in multiplying each vec component.
+
+Example,
+\`vec3(3, 9, 4) * 2 = vec3(6, 18, 8)\`,
+\`vec2(2, 3) * 3 = vec3(6, 9)\`
+
 
 Now go and draw *TWO* triangles!`;
 
