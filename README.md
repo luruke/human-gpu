@@ -27,9 +27,11 @@ This is still a work-in-progress thing, surely full of typos and subject to chan
 - [#0008 - Less memory is good](https://github.com/luruke/human-gpu/blob/main/exercises/0008.pdf)
 - [#0009 - Uniforms](https://github.com/luruke/human-gpu/blob/main/exercises/0009.pdf)
 - [#0010 - Uniforms v2](https://github.com/luruke/human-gpu/blob/main/exercises/0010.pdf)
-- #0011... To be done
-- #0012... To be done
+- [#0011 - GLSL](https://github.com/luruke/human-gpu/blob/main/exercises/0011.pdf)
+- [#0012 - what about z and w?](https://github.com/luruke/human-gpu/blob/main/exercises/0012.pdf)
 - #0013... To be done
+- #0014... To be done
+- #0015... To be done
 - ...
 
 [Download all](https://github.com/luruke/human-gpu/archive/main.zip)

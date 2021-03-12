@@ -27,7 +27,7 @@ void main() {
 }`;
 
 const HIDE_FRAGMENT = true;
-const TITLE = "Human GPU #0012 – what about 3D?";
+const TITLE = "Human GPU #0012 – what about z and w?";
 const TIPS = `0101010101011010101011010100001! 0101001011?
 
 Ah, it's you human sorry...sometimes i forgot that you don't talk our languge.
@@ -37,7 +37,7 @@ Slow down...we'll get there.
 
 Nothing magical or special, in order to do 3D, app data (uniforms + attributes) combined with some math in the vertex shader will simulate perspective and depth.
 
-We (GPU) don't have any notion about 3D, we just draw triangle were the apps tell us. All those things and fancy names (perspective camera, orthographic, projection) are humans best-practices and standards.
+We (GPU) don't have any notion about 3D, we just draw triangle were the apps tell us. All those things and fancy names (perspective camera, orthographic, projection) are humans concepts, best-practices and standards.
 
 But let's go step by step!
 

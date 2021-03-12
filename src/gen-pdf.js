@@ -11,6 +11,7 @@ const delay = (t) => {
     dumpio: true,
     headless: false,
     args: ["--headless", "--hide-scrollbars", "--mute-audio"],
+    // args: ["--hide-scrollbars", "--mute-audio"],
   });
   const page = await browser.newPage();
 
@@ -28,7 +29,7 @@ const delay = (t) => {
     });
   };
 
-  const genExercise = i => {
+  const genExercise = async (i) => {
     const name = i.toString().padStart(4, "0");
     const url = `http://127.0.0.1:8080/index.html?n=${i}`;
     const excercise = `../exercises/${name}.pdf`;
@@ -38,11 +39,14 @@ const delay = (t) => {
 
     await genScreenshot(url + "&hide", excercise);
     await genScreenshot(url, solution);
-  }
+  };
 
-  for (let i = 1; i < 11; i++) {
-    genExercise(i);
-  }
+  genExercise(11);
+  genExercise(12);
+
+  // for (let i = 1; i < 11; i++) {
+  //   genExercise(i);
+  // }
 
   await browser.close();
 })();

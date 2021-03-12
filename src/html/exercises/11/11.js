@@ -46,8 +46,9 @@ const TITLE = "Human GPU #0011 – GLSL";
 const TIPS = `What's up bro?
 new little task for you.
 
-GLSL is a subset of C language, it has all the common things you can expect from a C-like languages. (\`for, while, if, else\`)
-You see that is common for other humans like you to name attributes and uniforms with their type as prefix, like \`aVariable\` or \`uVariable\`...humans are so werid man...
+As you probably noticed GLSL language is very similar to "C" and it has all the common things you can expect from a C-like languages. (\`for, while, if, else\`)
+
+Also, you'll see that is common for other humans like you to name attributes and uniforms with their type as prefix, like \`aVariable\` or \`uVariable\`...humans are so werid man...
 
 Draw me a triangle for me?`;
 
