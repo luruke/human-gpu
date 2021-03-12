@@ -54,8 +54,6 @@ It's pretty stupid right? Yes, and I agree with you. But there are reasons behin
 
 Let me see..draw me a triangle!`;
 
-//It's important to note those are some industry common approach and "best-practice", but WebGL/glsl are completely agnostic about this.
-
 const RUN = (gl) => {
   gl.drawArrays(gl.TRIANGLES, 0, 1 * 3);
 };
