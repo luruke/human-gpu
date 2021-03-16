@@ -106,6 +106,12 @@
             <span></span>
           </div>
 
+          <div class="canvas__pixels">
+            <div class="horizontal"></div>
+
+            <div class="vertical"></div>
+          </div>
+
           <span class="legend legend-center">(0, 0)</span>
           <span class="legend legend-topleft">(-1, 1)</span>
           <span class="legend legend-topright">(1, 1)</span>
@@ -123,6 +129,20 @@
       function run() {
         // update view
         const root = document.querySelector("main");
+
+        if (typeof SHOW_PIXELS !== "undefined") {
+          const ph = root.querySelector(".canvas__pixels .horizontal");
+          const pv = root.querySelector(".canvas__pixels .vertical");
+          const n = 61;
+
+          for (let i = 0; i < n; i++) {
+            ph.appendChild(document.createElement("span"));
+          }
+
+          for (let i = 0; i < n; i++) {
+            pv.appendChild(document.createElement("span"));
+          }
+        }
 
         root.querySelector("[data-buffers]").innerHTML = BUFFERS;
         root.querySelector("[data-attributes]").innerHTML = ATTRIBUTES;

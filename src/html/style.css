@@ -192,6 +192,49 @@ code {
   border-top: 1px solid black;
 }
 
+.canvas__pixels {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.canvas__pixels .horizontal,
+.canvas__pixels .vertical {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.canvas__pixels .vertical {
+  flex-direction: column;
+}
+
+.canvas__pixels .horizontal span {
+  opacity: 1;
+  border-left: 1px solid rgba(255, 0, 0, 0.1);
+}
+
+.canvas__pixels .horizontal span:first-child,
+.canvas__pixels .horizontal span:last-child {
+  opacity: 0;
+}
+
+.canvas__pixels .vertical span {
+  opacity: 1;
+  border-top: 1px solid rgba(255, 0, 0, 0.1);
+}
+
+.canvas__pixels .vertical span:first-child,
+.canvas__pixels .vertical span:last-child {
+  opacity: 0;
+}
+
 .canvas__frame {
   position: relative;
   width: 100%;

@@ -1,8 +1,13 @@
 const BUFFERS = `{
   "data": [
-    -0.5, -0.5, 0.0,
-    0.0, 0.3, 0.0,
-    0.5, 0.3, 0.5
+    -0.5, 0.5, 0.0,
+    0.5, 0.5, 0.0,
+    0.5, -0.5, 0.0,
+    -0.5, -0.5, 0.0
+  ],
+  "_index": [
+    3, 0, 1,
+    1, 2, 3
   ]
 }`;
 
@@ -11,48 +16,38 @@ const ATTRIBUTES = `{
 }`;
 
 const UNIFORMS = `{
-  "uTranslate": [0.0, 0.0, 0.0],
-  "uScale": [1.0, 1.0, 1.0],
-  "uRotationX": 0.0,
-  "uRotationY": 0
+  
 }`;
 
 const VERTEX = `attribute vec3 aPosition;
-uniform vec3 uTranslate;
-uniform vec3 uScale;
-uniform float uRotationX;
-uniform float uRotationY;
 
 void main() {
-  vec3 position = aPosition;
-
-  // position.y = (cos(uRotationX) * position.y) - (sin(uRotationX) * position.z);
-  // position.z = (sin(uRotationX) * position.y) + (cos(uRotationX) * position.z);
-
-  position -= 0.5;
-  position.x = (cos(uRotationY) * position.x) + (sin(uRotationY) + sin(uRotationY) * position.z);
-  position.z = (-sin(uRotationY) * position.x) + (cos(uRotationY) * position.z);
-  position += 0.5;
-
-  gl_Position = vec4(position, 1.0);
+  gl_Position = vec4(aPosition, 1.0);
 }`;
 
+const SHOW_PIXELS = true;
 const FRAGMENT = `precision highp float;
 
 void main() {
   gl_FragColor = vec4(0.0, 0.0, 0.0, 1.0);
 }`;
 
-const HIDE_FRAGMENT = true;
-const TITLE = "Human GPU #0013 – three dimensions?";
-const TIPS = `
+const HIDE_FRAGMENT = false;
+const TITLE = "Human GPU #0013 – Fragment shader";
+const TIPS = `hello! let's talk about the elephant in the room. Introducing you the *Fragment Shader*!
 
-I know you don't have a lot of compute power...To simplify i will make you to only rotate x
+Until now, you only did half of the job, completing just a part of the real WebGL pipeline.
 
-Let me see..draw me a triangle!`;
+Drawing the triangles, in the way we did, is generally called Shape or Primitive Assembly. We worked in a theorethical vectorial space, without taking into account the actual screen resolution.
+
+After drawing our triangles, we need to "project" our shapes to a pixel grid. This phase is called rasterization.
+
+The frame buffer where we are drawing has in fact a well defined resolution.
+`;
 
 const RUN = (gl) => {
-  gl.drawArrays(gl.TRIANGLES, 0, 1 * 3);
+  // gl.drawArrays(gl.TRIANGLES, 0, 2 * 3);
+  gl.drawElements(gl.TRIANGLES, 2 * 3, gl.UNSIGNED_SHORT, 0);
 };
 
 var style = document.createElement("style");
@@ -62,8 +57,8 @@ style.innerHTML = `
 }
 
 .canvas {
-  width: 90mm;
-  height: 90mm;
+  width: 100mm;
+  height: 100mm;
 }
 `;
 document.head.appendChild(style);
