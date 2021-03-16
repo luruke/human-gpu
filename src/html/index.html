@@ -261,7 +261,9 @@
           const loc = gl.getUniformLocation(program, i);
           const value = _UNIFORMS[i];
 
-          if (value.length == 2) {
+          if (value.length == 3) {
+            gl.uniform3fv(loc, value);
+          } else if (value.length == 2) {
             gl.uniform2fv(loc, value);
           } else {
             gl.uniform1f(loc, value);
