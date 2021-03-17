@@ -30,7 +30,11 @@ This is still a work-in-progress thing, surely full of typos and subject to chan
 - [#0013 - Fragment shader](https://github.com/luruke/human-gpu/blob/main/exercises/0013.pdf)
 - [#0014 - Filling pixels](https://github.com/luruke/human-gpu/blob/main/exercises/0014.pdf)
 - [#0015 - Half pixel?](https://github.com/luruke/human-gpu/blob/main/exercises/0015.pdf)
-- #0015... To be done
+- [#0016 - Varyings](https://github.com/luruke/human-gpu/blob/main/exercises/0016.pdf)
+- [#0017 - UV?](https://github.com/luruke/human-gpu/blob/main/exercises/0017.pdf)
+- #0018... To be done
+- #0019... To be done
+- #0020... To be done
 - ...
 
 [Download all](https://github.com/luruke/human-gpu/archive/main.zip)
