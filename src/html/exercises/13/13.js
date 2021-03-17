@@ -1,11 +1,7 @@
 const BUFFERS = `{
-  "data": [
-    -0.5, 0.5, 0.0, 0.5, 0.5, 0.0,
-    0.5, -0.5, 0.0, -0.5, -0.5, 0.0
-  ],
-  "_index": [
-    3, 0, 1, 1, 2, 3
-  ]
+  "data": [ -0.5, 0.5, 0.0, 0.5, 0.5, 0.0,
+            0.5, -0.5, 0.0, -0.5, -0.5, 0.0 ],
+  "_index": [ 3, 0, 1, 1, 2, 3 ]
 }`;
 
 const ATTRIBUTES = `{ "aPosition": { "buffer": "data", "size": 3 } }`;
@@ -39,9 +35,9 @@ After drawing our triangles, we need to "project" our shapes to a pixel grid. Th
 
 The frame buffer where we are drawing has in fact a well defined resolution.
 
-We'll work with a whopping 60x60px resolution! For a total of only 3600 pixels. (I'm trying to help you out, human...).
+We are going to work with a whopping 60x60px resolution! For a total of 3600 pixels. (I'm trying to help you out, human...).
 
-You'll see that now the frame buffer have a new grid. Each little square in this new grid will rapresent a pixel.
+You'll see the frame buffer has now a new grid. Each little square in this new grid will rapresent a pixel.
 
 Similarly to our vertex shader, the fragment shader is written in \`GLSL\` and it has only a job: define and set the global variable \`gl_FragColor\`.
 

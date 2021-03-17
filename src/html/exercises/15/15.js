@@ -35,10 +35,10 @@ Either you fill it completely or not.
 
 So, how do we get sharp and and nice-looking shapes on a finite number of pixel then?
 
-Short answer, you can't, but there are some tricks you can put in place...you probably heard of a thing called "antialiasing", don't you?
+Short answer, you can't, but there are some tricks you can put in place..."antialiasing", rings a bell to you?
+We won't dive into it...as I'm pretty sure your calculation power is pretty limited...
 
-We won't dive into it, as I'm pretty sure your calculation power is pretty limited...
-`;
+Can you draw a triangle and fill it?`;
 
 const RUN = (gl) => {
   gl.drawArrays(gl.TRIANGLES, 0, 1 * 3);

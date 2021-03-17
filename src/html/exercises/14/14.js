@@ -26,15 +26,15 @@ void main() {
 
 const HIDE_FRAGMENT = false;
 const TITLE = "Human GPU #0014 – Filling pixels";
-const TIPS = `Ok, so, you like painting and filling squares, human?
+const TIPS = `Ok, so, you liked painting and filling squares, human?
 
 Our previous square in #0013 was 30x30px, and it filled a surface of 900 pixels.
 
-The fragment shader then, was executed (in your mind) 900 times, against the 6 time execution of the vertex shader.
+The fragment shader was executed (in your mind) 900 times, and the vertex shader was executed 6 times.
 
 Few more things about fragment shader:
 
-Don't pay too much attention to the \`precision highp float;\`, fragment shader lacks of default precision format, so we must specify one.
+Don't pay too much attention to the \`precision highp float;\`; Fragment shader lacks of default precision format, so we must specify one.
 
 The RGBA values expressed in gl_FragColor spans from 0 to 1.
 For instance \`rgb(233, 10, 30)\` will be expressed as \`vec3(233.0 / 255.0, 10.0 / 255.0, 30.0 / 255.0)\`

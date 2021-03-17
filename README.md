@@ -1,10 +1,8 @@
 # 🧠 Human GPU Exercises.
 
-❗️ Super beta ❗️
-
 ![picture head](https://cdn-images-1.medium.com/max/1200/1*aMFjS2fG43qh5vH0J2QvLg.jpeg)
 
-A series of exercises that aims to teach the basic of the WebGL/OpenGL pipeline.
+In the process of giving a WebGL workshop I created a series of exercises that aims to teach the basic of the WebGL/OpenGL pipeline.
 The excercises are made to be printed and done in old-fashion **pen and paper**.
 
 You are the GPU, you need to _read_, _parse_, _compile_ and _render_ using only the power of your mind.
@@ -29,8 +27,9 @@ This is still a work-in-progress thing, surely full of typos and subject to chan
 - [#0010 - Uniforms v2](https://github.com/luruke/human-gpu/blob/main/exercises/0010.pdf)
 - [#0011 - GLSL](https://github.com/luruke/human-gpu/blob/main/exercises/0011.pdf)
 - [#0012 - what about z and w?](https://github.com/luruke/human-gpu/blob/main/exercises/0012.pdf)
-- #0013... To be done
-- #0014... To be done
+- [#0013 - Fragment shader](https://github.com/luruke/human-gpu/blob/main/exercises/0013.pdf)
+- [#0014 - Filling pixels](https://github.com/luruke/human-gpu/blob/main/exercises/0014.pdf)
+- [#0015 - Half pixel?](https://github.com/luruke/human-gpu/blob/main/exercises/0015.pdf)
 - #0015... To be done
 - ...
 
