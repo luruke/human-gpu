@@ -41,12 +41,12 @@ const delay = (t) => {
     await genScreenshot(url, solution);
   };
 
-  genExercise(11);
-  genExercise(12);
+  // genExercise(11);
+  // genExercise(12);
 
-  // for (let i = 1; i < 11; i++) {
-  //   genExercise(i);
-  // }
+  for (let i = 1; i < 11; i++) {
+    genExercise(i);
+  }
 
   await browser.close();
 })();
